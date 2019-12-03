@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Walmat</string>
+    <array name="foodI">
+
+        <item> Garlic</item>
+        <item> ginger</item>
+        <item> ice cream</item>
+        <item> Irish stew</item>
+        <item>Indian food</item>
+        <item> gnocchi</item>
+        <item> goose</item>
+        <item> sparagus</item>
+        <item> apple</item>
+        <item> avacado</item>
+        <item> beer</item>
+        <item> bisque</item>
+        <item> bluefish</item>
+        <item> bread</item>
+        <item> dates</item>
+        <item> dips</item>
+
+    </array>
 </resources>

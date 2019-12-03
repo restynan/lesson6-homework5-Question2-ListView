@@ -12,37 +12,35 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+   var electronics = arrayOf<String>("televisions", "DVD players", "laptops", "desktop computers", "mobile phones",
+    "iPods", "iPads", "cameras", "fans", "ovens", "washing machines", "game consoles", "printers" , "radios" )
 
-    fun electronicClick(view: View) {
-        items = arrayOf<String>("televisions", "DVD players", "laptops", "desktop computers", "mobile phones",
-             "iPods", "iPads", "cameras", "fans", "ovens", "washing machines", "game consoles", "printers" , "radios" )
+    var cloth=arrayOf<String>("belt","boots","cap","coat","dress","gloves","hat","jacket","jeans","pajamas","pants","raincoat","scarf","shirt","shoes","skirt",
+    "slacks","slippers","socks","stockings","suit","sweater","sweatshirt","t-shirt","tie","trousers","underclothes","underpants","undershirt")
+
+    var beauty = arrayOf<String>("concealer","blush","powder","Mascara","Neutral Eye Shadow","Lipstick","Eye Liner","Fluffy Powder Brush","Crease Brush","Tweezers")
+   var food=arrayOf<String>( "Garlic","ginger","ice cream","Irish stew","Indian food","gnocchi,goose","sparagus","apple","avacado","beer","bisque","bluefish","bread","dates")
 
 
-        var intent =Intent(this,LinearActivity::class.java)
-        intent.putExtra("AllItems",items)
+
+
+
+
+    fun onclick(view: View) {
+     items=   when (view.id) {
+            R.id.electronicImage -> electronics
+            R.id.clothImage -> cloth
+            R.id.beatyImage -> beauty
+            else -> food
+
+        }
+
+
+        var intent = Intent(this, LinearActivity::class.java)
+
+        intent.putExtra("AllItems", items)
         startActivity(intent)
 
-    }
-    fun clothClick(view: View) {
-      items =arrayOf<String>("belt","boots","cap","coat","dress","gloves","hat","jacket","jeans","pajamas","pants","raincoat","scarf","shirt","shoes","skirt",
-        "slacks","slippers","socks","stockings","suit","sweater","sweatshirt","t-shirt","tie","trousers","underclothes","underpants","undershirt")
 
-        var intent =Intent(this,LinearActivity::class.java)
-        intent.putExtra("AllItems",items)
-        startActivity(intent)
-
-    }
-    fun beautyClick(view: View) {
-        items = arrayOf<String>("concealer","blush","powder","Mascara","Neutral Eye Shadow","Lipstick","Eye Liner","Fluffy Powder Brush","Crease Brush","Tweezers")
-        var intent =Intent(this,LinearActivity::class.java)
-        intent.putExtra("AllItems",items)
-        startActivity(intent)
-    }
-    fun foodClick(view: View) {
-        items = arrayOf<String>("Garlic" ,"ginger", "ice cream" ,"Irish stew" ,"Indian food" ,"gnocchi" ,"goose" ,"sparagus" ,"apples" ,"avacado", "beer" ,"bisque",
-        "bluefish" ,"bread" ,"dates" ,"dips ","duck")
-        var intent =Intent(this,LinearActivity::class.java)
-        intent.putExtra("AllItems",items)
-        startActivity(intent)
     }
 }
